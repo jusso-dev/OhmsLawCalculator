@@ -1,0 +1,6 @@
+<resources>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">NVWvK6zvbs5pgX-dzx6jtj2buy-ycfcb56b9-88ff-4c91-a7b3-2bafdb78bb39</string>
+    <string moduleConfig="true" name="appcenterCrashes_whenToSendCrashes">ALWAYS_SEND</string>
+    <string moduleConfig="true" name="appcenterAnalytics_whenToEnableAnalytics">ALWAYS_SEND</string>
+    <string name="app_name">Ohms Law</string>
+</resources>

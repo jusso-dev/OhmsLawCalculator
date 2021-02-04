@@ -1,0 +1,37 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'OhmCalculator' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for OhmCalculator
+  pod 'AppCenter/Crashes', '~> 1.1.0'
+  pod 'AppCenter/Analytics', '~> 1.1.0'
+  pod 'AppCenterReactNativeShared', '~> 1.1.0'
+
+  
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
+  pod 'CodePush', :path => '../node_modules/react-native-code-push'
+
+  target 'OhmCalculatorTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
+target 'OhmCalculator-tvOS' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for OhmCalculator-tvOS
+
+  target 'OhmCalculator-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
