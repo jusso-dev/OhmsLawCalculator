@@ -4,6 +4,37 @@ A native iOS app, written in SwiftUI, for solving Ohm's Law and power equations.
 
 Pick which value you want to solve for — **voltage, current, resistance, or power** — enter the values you know, and the result updates instantly with the formula used.
 
+## Screenshots
+
+<details>
+<summary><b>Light mode</b> — tap to expand</summary>
+
+<br>
+
+<p align="center">
+  <img src="docs/screenshots/light-voltage.png" width="240" alt="Voltage selected, light mode">
+  <img src="docs/screenshots/light-current.png" width="240" alt="Current selected, light mode">
+  <img src="docs/screenshots/light-resistance.png" width="240" alt="Resistance selected, light mode">
+</p>
+<p align="center">
+  <img src="docs/screenshots/light-power.png" width="240" alt="Power selected, light mode">
+  <img src="docs/screenshots/light-result.png" width="240" alt="Computed voltage result, light mode">
+</p>
+
+</details>
+
+<details>
+<summary><b>Dark mode</b> — tap to expand</summary>
+
+<br>
+
+<p align="center">
+  <img src="docs/screenshots/dark-resistance.png" width="240" alt="Resistance selected, dark mode">
+  <img src="docs/screenshots/dark-power.png" width="240" alt="Power selected, dark mode">
+</p>
+
+</details>
+
 ## Features
 
 - Solve for any of V, I, R, or P from any two known values
