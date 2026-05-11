@@ -29,11 +29,11 @@ struct VariableChip: View {
             .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
             .background {
                 RoundedRectangle(cornerRadius: Theme.Radius.chip)
-                    .fill(isSelected ? AnyShapeStyle(variable.tint.gradient) : AnyShapeStyle(.background.secondary))
+                    .fill(isSelected ? AnyShapeStyle(variable.tint.gradient) : AnyShapeStyle(Color(.secondarySystemBackground)))
             }
             .overlay {
                 RoundedRectangle(cornerRadius: Theme.Radius.chip)
-                    .strokeBorder(isSelected ? Color.clear : variable.tint.opacity(0.25), lineWidth: 1)
+                    .strokeBorder(isSelected ? Color.clear : variable.tint.opacity(0.35), lineWidth: 1)
             }
             .foregroundStyle(isSelected ? Color.white : .primary)
             .contentShape(RoundedRectangle(cornerRadius: Theme.Radius.chip))

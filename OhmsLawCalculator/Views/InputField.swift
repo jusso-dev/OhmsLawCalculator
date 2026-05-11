@@ -40,7 +40,7 @@ struct InputField: View {
         .frame(minHeight: 44)
         .background {
             RoundedRectangle(cornerRadius: Theme.Radius.field)
-                .fill(.background)
+                .fill(Color(.secondarySystemBackground))
         }
         .overlay {
             RoundedRectangle(cornerRadius: Theme.Radius.field)

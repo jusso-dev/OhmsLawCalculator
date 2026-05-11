@@ -29,7 +29,8 @@ struct InputsCard: View {
         .padding(Theme.Spacing.m)
         .background {
             RoundedRectangle(cornerRadius: Theme.Radius.card)
-                .fill(.background.secondary)
+                .fill(.background)
+                .shadow(color: .black.opacity(0.06), radius: 12, y: 4)
         }
     }
 
