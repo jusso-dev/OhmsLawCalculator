@@ -15,6 +15,17 @@ enum Theme {
         static let field: CGFloat = 14
     }
 
-    static let resultFormat: FloatingPointFormatStyle<Double> = .number
-        .precision(.fractionLength(0...4))
+    /// Window width at which the calculator splits into two columns.
+    static let twoColumnMinWidth: CGFloat = 720
+
+    static func resultFormat(for value: Double) -> FloatingPointFormatStyle<Double> {
+        let magnitude = abs(value)
+        if magnitude >= 1e9 {
+            return .number.notation(.scientific).precision(.significantDigits(1...4))
+        }
+        if magnitude < 1 {
+            return .number.precision(.significantDigits(1...4))
+        }
+        return .number.precision(.fractionLength(0...4))
+    }
 }

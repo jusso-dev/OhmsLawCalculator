@@ -10,10 +10,13 @@ struct InputsCard: View {
                 Text("Inputs")
                     .font(.headline)
                 Spacer()
-                Button("Clear", systemImage: "arrow.counterclockwise", action: clear)
-                    .labelStyle(.titleOnly)
-                    .font(.subheadline)
-                    .disabled(!hasAnyInput)
+                Button(action: clear) {
+                    Text("Clear")
+                        .frame(minWidth: 44, minHeight: 44, alignment: .trailing)
+                        .contentShape(Rectangle())
+                }
+                .font(.subheadline)
+                .disabled(!hasAnyInput)
             }
 
             VStack(spacing: Theme.Spacing.s) {

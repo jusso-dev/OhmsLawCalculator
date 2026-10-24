@@ -2,6 +2,8 @@ import SwiftUI
 
 struct VariableSelector: View {
     @Binding var selection: OhmVariable
+    // Scales with Dynamic Type so chips drop to one column instead of breaking words.
+    @ScaledMetric(relativeTo: .subheadline) private var chipMinWidth: CGFloat = 140
 
     var body: some View {
         VStack(alignment: .leading, spacing: Theme.Spacing.s) {
@@ -9,7 +11,7 @@ struct VariableSelector: View {
                 .font(.headline)
 
             LazyVGrid(
-                columns: [GridItem(.adaptive(minimum: 140), spacing: Theme.Spacing.s)],
+                columns: [GridItem(.adaptive(minimum: chipMinWidth), spacing: Theme.Spacing.s)],
                 spacing: Theme.Spacing.s
             ) {
                 ForEach(OhmVariable.allCases) { variable in

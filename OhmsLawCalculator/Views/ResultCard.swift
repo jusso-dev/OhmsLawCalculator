@@ -12,7 +12,7 @@ struct ResultCard: View {
 
             if let result = calculator.result, result.isFinite {
                 HStack(alignment: .lastTextBaseline, spacing: Theme.Spacing.s) {
-                    Text(result.value, format: Theme.resultFormat)
+                    Text(result.value, format: Theme.resultFormat(for: result.value))
                         .font(.system(size: resultFontSize, weight: .bold, design: .rounded))
                         .monospacedDigit()
                         .contentTransition(.numericText(value: result.value))
@@ -55,7 +55,11 @@ struct ResultCard: View {
     }
 
     private var emptyMessage: String {
-        "Enter two values to calculate \(calculator.target.title.lowercased())."
+        let entered = calculator.inputs.filter { calculator.value(for: $0) != nil }.count
+        if entered >= 2 {
+            return "Can't calculate \(calculator.target.title.lowercased()) from these values."
+        }
+        return "Enter two values to calculate \(calculator.target.title.lowercased())."
     }
 }
 
