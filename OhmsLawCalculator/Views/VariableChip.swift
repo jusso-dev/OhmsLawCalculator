@@ -4,13 +4,14 @@ struct VariableChip: View {
     let variable: OhmVariable
     let isSelected: Bool
     let action: () -> Void
+    @ScaledMetric(relativeTo: .title3) private var iconSize: CGFloat = 28
 
     var body: some View {
         Button(action: action) {
             HStack(spacing: Theme.Spacing.s) {
                 Image(systemName: variable.systemImage)
                     .font(.title3)
-                    .frame(width: 28, height: 28)
+                    .frame(width: iconSize, height: iconSize)
                     .foregroundStyle(isSelected ? .white : variable.tint)
 
                 VStack(alignment: .leading, spacing: 0) {

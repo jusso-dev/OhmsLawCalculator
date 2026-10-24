@@ -9,15 +9,20 @@ struct FormulaReferenceCard: View {
         .init(label: "Power (I, R)", formula: "P = I² × R"),
         .init(label: "Power (V, R)", formula: "P = V² ÷ R")
     ]
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
+        let rowLayout = dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: Theme.Spacing.xs))
+            : AnyLayout(HStackLayout())
+
         VStack(alignment: .leading, spacing: Theme.Spacing.s) {
             Label("Formulas", systemImage: "book.closed")
                 .font(.headline)
 
             VStack(spacing: 0) {
                 ForEach(formulas) { entry in
-                    HStack {
+                    rowLayout {
                         Text(entry.label)
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
@@ -27,6 +32,7 @@ struct FormulaReferenceCard: View {
                             .bold()
                     }
                     .padding(.vertical, Theme.Spacing.s)
+                    .frame(maxWidth: .infinity, alignment: .leading)
 
                     if entry.id != formulas.last?.id {
                         Divider()
